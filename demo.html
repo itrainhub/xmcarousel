@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<link rel="stylesheet" href="dist/css/xmCarousel.min.css">
+</head>
+<body>
+	<div id="container"></div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="dist/js/jquery.xmcarousel.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#container").xmCarousel({
+				width: 790,
+				height: 340,
+				type : "fade",
+				imgs : [
+					{imgSrc:"images/1.jpg", href:""},
+					{imgSrc:"images/2.jpg", href:"http://www.baidu.com"},
+					{imgSrc:"images/3.jpg", href:"http://www.baidu.com"}
+				]
+			});
+		});
+	</script>
+</body>
+</html>
