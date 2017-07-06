@@ -22,7 +22,9 @@
 ### 方法说明：
 
 ```
-var $carousel = xmCarousel(options);
+var $carousel = jQueryObject.xmCarousel(options);
+	作用：
+		使用 jQuery 对象调用该方法，即可实现轮播效果
 	参数：
 		options 为可配置对象参数，如：
 			options = {
