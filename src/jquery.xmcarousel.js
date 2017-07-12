@@ -52,17 +52,17 @@
 				height : options.height
 			});
 
-			// ul 初始化，追加元素图片盒子元素
+			// ul 初始化，追加图片盒子元素
 			$ul.html($.map(options.imgs, function(item, index){
 				return "<li><a href='"+ (item.href || "#") +"' target='_blank'><img src='"+ item.imgSrc +"'></a></li>";
 			}).join(""));
 			// 将 ul 追加到轮播图容器中
 			$(elem).append($ul);
-			// 设置 ul 样式
+			// 设置 ul 样式，将后代图片边框取消
 			$ul.css({
 				width : options.width,
 				height : options.height
-			});
+			}).find("img").css("border", "none");
 			// 判断轮播方式，设置 ul 宽度或 li 布局定位方式
 			if(!/^fade$|^slide$/.test(options.type)) // 默认淡入淡出
 				options.type = "fade";
@@ -74,7 +74,7 @@
 					left : 0,
 					width : options.width,
 					height : options.height
-				}).eq(options.index).show().siblings().hide();
+				}).eq(self.currentIndex).show().siblings().hide();
 			} else if (options.type === "slide") { // 滑动无缝轮播
 				// 克隆第一张与最后一张图片
 				var $first = $ul.children(":first").clone(true),
@@ -87,7 +87,8 @@
 						})
 				   .children().css({
 						width : options.width,
-						height : options.height
+						height : options.height,
+						float: "left"
 					});
 			}
 			// 添加翻页条背景
