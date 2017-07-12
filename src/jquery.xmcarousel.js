@@ -1,5 +1,23 @@
+/*!
+ * jQuery xmCarousel Plugin v1.1.0
+ * https://github.com/itrainhub/xmcarousel
+ *
+ * Copyright 2017 isaac
+ * Released under the MIT license
+ */
 ;
-(function($){
+(function(factory){
+	if (typeof define === "function" && define.amd) {
+		// 支持AMD规范
+		define(["jquery"], factory);
+	} else if (typeof exports === "object"){
+		// 支持CommonJS规范
+		factory(require("jquery"));
+	} else {
+		// 不支持模块化开发
+		factory(jQuery);
+	}
+}(function($){
 	var xmCarousel = {
 		init : function(options, elem){
 			var self = this;
@@ -206,4 +224,4 @@
 		btnPrevNext: true, // 是否出现向前/后翻页按钮
 		imgs : [] // 轮播图片数组
 	};
-})(jQuery);
+}));

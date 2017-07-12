@@ -71,7 +71,15 @@ var $carousel = jQueryObject.xmCarousel(options);
 
 ## 版本
 
+**v1.1.0**
+
+2017.7.12
+
+更新：增加模块化支持，可用于AMD规范/CommonJS规范场景
+
 **v1.0.0**
+
+2017.7.6 
 
 基于 jQuery 1.12.4 版本构建，实现最基本的淡入淡出式轮播、左右滑动无缝轮播效果
 
